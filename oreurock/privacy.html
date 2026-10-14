@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>오르락 개인정보 처리방침</title>
+<link rel="icon" href="./favicon.png">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="./"><img src="./icon.png" alt="">오르락</a>
+  <nav><a href="./privacy.html" aria-current="page">처리방침</a><a href="./delete-account.html">계정 삭제</a></nav>
+</div></header>
+
+<main>
+  <div class="title">
+    <h1>개인정보 처리방침</h1>
+    <div class="chips"><span class="chip">시행일 2026-10-13</span><span class="chip">개인정보 보호책임자 김현우</span></div>
+    <p class="lead">오르락(이하 "앱")는 클라이밍 영상에서 등반 시도를 잘라 클립으로 저장하고, 다녀온 암장과 등반 기록을 남기는 앱입니다. 이 문서는 앱이 어떤 정보를 어디에 저장하고 보내는지 설명합니다. 문의는 맨 아래 이메일로 받습니다.</p>
+  </div>
+
+  <div class="glance">
+    <div><b>저장하는 것</b><p>계정 정보, 방문·등반 기록, 영상 요약. 영상 파일과 클립은 서버에 저장하지 않아요.</p></div>
+    <div><b>보관 기간</b><p>계정은 탈퇴할 때까지, 로그인 안 한 기록은 마지막 사용 후 1년.</p></div>
+    <div><b>삭제 방법</b><p>앱 설정 → 계정 → 회원 탈퇴. 즉시 전부 삭제돼요.</p></div>
+  </div>
+
+  <details class="toc" open>
+    <summary>목차</summary>
+    <ol>
+      <li><a href="#s1">서버에 저장하는 정보</a></li>
+      <li><a href="#s2">오류 기록과 사용 통계</a></li>
+      <li><a href="#s3">기기 권한</a></li>
+      <li><a href="#s4">보관과 삭제</a></li>
+      <li><a href="#s5">정보주체의 권리와 안전 조치</a></li>
+      <li><a href="#s6">처리 위탁과 국외 이전</a></li>
+      <li><a href="#s7">이용 제한</a></li>
+      <li><a href="#s8">변경</a></li>
+      <li><a href="#s9">문의</a></li>
+    </ol>
+  </details>
+
+  <section id="s1">
+    <h2><span class="n">1</span>서버에 저장하는 정보</h2>
+    <p>앱을 처음 열면 기기마다 임의의 익명 식별자가 만들어지고, 등반 기록과 영상 요약은 로그인하지 않아도 이 식별자로 서버에 저장됩니다. 로그인하면 같은 계정으로 합쳐집니다. 방문 등록, 도감 사진, 난이도 표 참여, 암장 제보는 로그인한 계정에서만 저장됩니다.</p>
+    <div class="items">
+      <div class="item"><h3>계정</h3><p>Google 또는 카카오 로그인 시 이메일, 이름(닉네임), 프로필 사진 URL</p><span class="for"><b>용도</b>로그인, 기기 간 동기화</span></div>
+      <div class="item"><h3>방문 기록</h3><p>암장, 방문 일시</p><span class="for"><b>용도</b>암장 도감</span></div>
+      <div class="item"><h3>도감 사진</h3><p>사용자가 직접 찍거나 고른 암장 사진</p><span class="for"><b>용도</b>암장 도감(본인에게만 보임)</span></div>
+      <div class="item"><h3>등반 기록</h3><p>암장, 난이도, 완등 여부, 클립 구간(초), 기록 근거(영상 위치·방문·직접 선택), 기기 내 영상 식별자</p><span class="for"><b>용도</b>등반 기록, 난이도 표 참여 자격</span></div>
+      <div class="item"><h3>영상 요약</h3><p>영상 길이, 찾은 시도 수, 분석에 걸린 시간, 앱·분석 버전, 플랫폼(OS 버전, 안드로이드는 칩 모델명 예: SM8650)</p><span class="for"><b>용도</b>자동 자르기 품질·속도 개선</span></div>
+      <div class="item"><h3>난이도 표 참여</h3><p>입력한 난이도 순서, 투표, 신고 내용</p><span class="for"><b>용도</b>암장 난이도 표</span></div>
+      <div class="item"><h3>암장 제보</h3><p>제보 종류(없는 암장·폐업·이전·정보 오류), 암장, 메모</p><span class="for"><b>용도</b>암장 목록 관리</span></div>
+    </div>
+    <p>영상 파일과 잘라낸 클립은 서버에 저장하지 않습니다. 영상의 촬영 위치는 기기에서 근처 암장을 찾는 데 쓰고, 서버에는 좌표가 아니라 암장 식별자만 남습니다. 로그인과 서버 요청 때 접속 IP가 서버 보안 기록에 남고 짧은 기간 뒤 자동으로 지워집니다.</p>
+  </section>
+
+  <section id="s2">
+    <h2><span class="n">2</span>오류 기록과 사용 통계</h2>
+    <p>앱을 고치고 개선하기 위해 아래 정보를 외부 서비스로 보냅니다. 영상, 사진, 위치 좌표, 이메일, 이름은 보내지 않습니다.</p>
+    <div class="items">
+      <div class="item"><h3>오류 기록 · Sentry</h3><p>앱이 멈추거나 오류가 났을 때의 오류 내용, 오류가 난 화면 이름, 기기 모델, OS·앱 버전, 익명 식별자, 접속 IP</p><span class="for"><b>용도</b>오류 원인 찾기</span></div>
+      <div class="item"><h3>사용 통계 · PostHog</h3><p>앱 실행, 영상 고름(개수), 분석 완료, 클립 저장, 도감 등록, 난이도 투표 같은 사용 단계와 시각, 기기 모델, OS·앱 버전, 언어·시간대 설정, 화면 크기, 익명 식별자</p><span class="for"><b>용도</b>어떤 기능이 쓰이는지, 어디서 막히는지 파악</span></div>
+    </div>
+    <p>이 익명 식별자는 각 서비스가 기기마다 만든 임의의 값으로, 계정 이메일이나 이름과 연결하지 않습니다. 끄기 설정은 따로 없으며, 보내지 않으려면 앱을 사용하지 않는 방법밖에 없습니다.</p>
+    <p class="note">이와 별도로, 안드로이드에서 보조 분석 엔진(MediaPipe Tasks)이 동작할 때 그 라이브러리가 성능·사용 지표(처리 시간, 호출 횟수, 라이브러리 버전 등)를 Google LLC로 직접 보냅니다. 앱이 맡긴 것이 아니라 라이브러리 자체의 수집이며, 영상 내용은 포함되지 않습니다(<a href="https://policies.google.com/privacy">구글 개인정보처리방침</a>).</p>
+  </section>
+
+  <section id="s3">
+    <h2><span class="n">3</span>기기 권한</h2>
+    <div class="items">
+      <div class="item"><h3>사진·동영상</h3><p>자를 영상 고르기, 잘라낸 클립 저장, 도감 사진 고르기</p></div>
+      <div class="item"><h3>카메라</h3><p>도감 사진 찍기</p></div>
+      <div class="item"><h3>위치</h3><p>근처 암장 찾기, 암장에서 방문 등록 확인</p></div>
+      <div class="item"><h3>알림</h3><p>영상 분석이 끝났을 때 알려주기</p></div>
+    </div>
+    <p>권한을 거부해도 앱의 다른 기능은 쓸 수 있습니다.</p>
+  </section>
+
+  <section id="s4">
+    <h2><span class="n">4</span>보관과 삭제</h2>
+    <ul>
+      <li>계정에 저장한 정보는 계정을 삭제할 때까지 보관합니다.</li>
+      <li>로그인하지 않은 익명 식별자의 기록은 마지막 사용 후 1년이 지나면 삭제합니다.</li>
+      <li>앱 설정 → 계정 → 회원 탈퇴를 누르면 계정과 서버에 저장된 모든 정보(방문 기록, 도감 사진, 등반 기록, 영상 요약, 투표·제보)가 즉시 삭제됩니다. 로그아웃은 정보를 삭제하지 않습니다.</li>
+      <li>오류 기록은 Sentry에서 30일, 사용 통계는 PostHog에서 1년 보관한 뒤 자동으로 지워집니다. 이 기록은 계정과 연결되지 않아 개별 삭제 요청은 받지 않습니다.</li>
+    </ul>
+    <p>자세한 절차: <a href="./delete-account.html">계정 및 데이터 삭제 안내</a></p>
+  </section>
+
+  <section id="s5">
+    <h2><span class="n">5</span>정보주체의 권리와 안전 조치</h2>
+    <ul>
+      <li>열람·정정·삭제·처리 정지는 앱 안에서 직접 하거나(기록 수정·삭제, 회원 탈퇴) 맨 아래 이메일로 요청할 수 있고, 요청은 10일 안에 처리합니다. 만 14세 미만은 이용할 수 없으므로 법정대리인 절차는 없습니다.</li>
+      <li>안전 조치: 모든 서버 통신은 암호화(HTTPS)되고, 서버 데이터는 계정별 접근 권한 규칙으로 본인만 읽고 쓸 수 있습니다. 운영자는 서비스 운영에 필요한 범위에서만 접근합니다.</li>
+      <li>권익 침해 상담·신고: 개인정보침해신고센터(privacy.kisa.or.kr, 국번 없이 118), 개인정보분쟁조정위원회(kopico.go.kr, 1833-6972), 대검찰청(spo.go.kr, 1301), 경찰청(ecrm.police.go.kr, 182)</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2><span class="n">6</span>처리 위탁과 국외 이전</h2>
+    <div class="items">
+      <div class="item"><h3>서버·데이터베이스·사진 저장소</h3><p>Supabase (대한민국 서울 리전)</p></div>
+      <div class="item"><h3>로그인</h3><p>Google, 카카오(각 서비스의 로그인 화면에서 동의한 항목만 받습니다)</p></div>
+      <div class="item"><h3>오류 기록 · 국외 이전</h3><p>Functional Software, Inc.(Sentry, <a href="https://sentry.io/privacy/">sentry.io/privacy</a>) — 미국, 앱 사용 중 오류가 날 때마다 네트워크로 전송, 2절의 오류 기록 항목, 30일 보관</p></div>
+      <div class="item"><h3>사용 통계 · 국외 이전</h3><p>PostHog Inc.(<a href="https://posthog.com/privacy">posthog.com/privacy</a>) — 미국, 앱 사용 중 네트워크로 전송, 2절의 사용 통계 항목, 1년 보관</p></div>
+      <div class="item"><h3>제3자 전송(위탁 아님) · 영상 분석 라이브러리 사용 지표</h3><p>Google LLC(<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>) — 미국, 보조 분석 엔진이 동작할 때 네트워크로 전송, 2절의 해당 항목, 보관 기간은 구글 정책에 따름</p></div>
+    </div>
+    <p>이 외의 제3자에게 정보를 제공하지 않으며, 광고 목적으로 쓰지 않습니다. 국외 이전을 원하지 않으면 앱 사용을 중단하는 방법밖에 없으며, 그 외의 불이익은 없습니다.</p>
+  </section>
+
+  <section id="s7">
+    <h2><span class="n">7</span>이용 제한</h2>
+    <p>만 14세 미만은 앱을 이용할 수 없습니다.</p>
+  </section>
+
+  <section id="s8">
+    <h2><span class="n">8</span>변경</h2>
+    <p>정보를 저장하거나 보내는 방식이 바뀌면 시행 7일 전(수집 항목·목적·제3자 전송이 바뀌는 중요 변경은 30일 전)에 이 페이지에 공지하고 시행일을 바꿉니다.</p>
+  </section>
+
+  <section id="s9">
+    <h2><span class="n">9</span>문의</h2>
+    <p><a href="mailto:khwland090@gmail.com">khwland090@gmail.com</a></p>
+  </section>
+</main>
+
+<footer><span>© 오르락</span><a href="./">홈</a><a href="./delete-account.html">계정 및 데이터 삭제</a></footer>
+</body>
+</html>
