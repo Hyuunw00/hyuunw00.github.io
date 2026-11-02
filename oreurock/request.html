@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>오르락 개인정보·위치 요청</title>
+<link rel="icon" href="./favicon.png">
+<link rel="stylesheet" href="./style.css">
+<style>
+  form { display: grid; gap: 14px; }
+  .opt { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); cursor: pointer; }
+  .opt input { margin-top: 4px; accent-color: var(--accent); }
+  .opt b { display: block; }
+  .opt span { color: var(--sub); font-size: 14px; }
+  label.field { display: grid; gap: 6px; font-weight: 600; }
+  label.field small { color: var(--sub); font-weight: 400; }
+  input[type=text], textarea { width: 100%; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+  textarea { min-height: 80px; resize: vertical; }
+  button { font: inherit; font-weight: 700; color: #fff; background: var(--accent); border: 0; border-radius: 999px; padding: 12px 20px; cursor: pointer; justify-self: start; }
+  button:disabled { opacity: .5; cursor: default; }
+  #result { font-weight: 600; }
+  #result.err { color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="./"><img src="./icon.png" alt="">오르락</a>
+  <nav><a href="./privacy.html">처리방침</a><a href="./location-terms.html">위치 약관</a><a href="./delete-account.html">계정 삭제</a><a href="./request.html" aria-current="page">요청</a></nav>
+</div></header>
+
+<main>
+  <div class="title">
+    <h1>개인정보·위치 요청</h1>
+    <div class="chips"><span class="chip">앱 오르락</span><span class="chip">처리 기한 10일 이내</span></div>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span>요청 보내기</h2>
+    <p>앱의 [설정 → 앱 정보 → 개인정보·위치 요청]으로 들어오면 사용자 ID가 자동으로 채워집니다. 로그인한 계정은 앱 [설정 → 계정 → 회원 탈퇴]로 바로 지울 수도 있습니다.</p>
+    <form id="f">
+      <label class="opt"><input type="radio" name="kind" value="location_pause" required><div><b>위치 기능 일시 중지</b><span>위치로 암장을 확인하거나 영상 위치로 암장을 찾지 않게 멈춥니다. 다시 쓰려면 일시 중지 해제를 요청하세요.</span></div></label>
+      <label class="opt"><input type="radio" name="kind" value="location_resume"><div><b>위치 기능 일시 중지 해제</b><span>멈춘 위치 기능을 다시 씁니다.</span></div></label>
+      <label class="opt"><input type="radio" name="kind" value="location_withdraw"><div><b>위치 이용 동의 철회</b><span>위치로 확인한 방문 기록, 영상 위치로 찾은 등반 기록의 암장, 위치 이용 기록을 지웁니다. 되돌릴 수 없습니다.</span></div></label>
+      <label class="opt"><input type="radio" name="kind" value="erase"><div><b>서버에 저장된 내 기록 삭제</b><span>등반 기록, 보관한 클립, 방문 기록, 의견·제보 등 이 사용자 ID로 서버에 남은 기록을 모두 지웁니다. 폰의 사진 앱 원본과 저장한 클립은 그대로입니다.</span></div></label>
+      <label class="field">사용자 ID <small>앱 [설정 → 앱 정보 → 개인정보·위치 요청] 아래에 앞 8자리가 보입니다</small><input type="text" id="uid" autocomplete="off" spellcheck="false" placeholder="자동으로 채워져요"></label>
+      <label class="field">답장 받을 연락처 <small>선택. 이메일 등. 사용자 ID가 없으면 꼭 적어 주세요</small><input type="text" id="contact" maxlength="200"></label>
+      <label class="field">남길 말 <small>선택</small><textarea id="note" maxlength="500"></textarea></label>
+      <button id="send" type="submit">요청 보내기</button>
+      <p id="result" role="status"></p>
+    </form>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>처리 방법</h2>
+    <ul>
+      <li>요청을 받으면 지체 없이, 늦어도 10일 안에 처리합니다. 연락처를 남기면 처리 결과를 알려 드립니다.</li>
+      <li>위치 기능 일시 중지와 동의 철회는 서버에서 먼저 막고, 앱은 다음에 열 때 그 상태를 따릅니다.</li>
+      <li>이메일(<a href="mailto:khwland090@gmail.com?subject=오르락 개인정보·위치 요청">khwland090@gmail.com</a>)로 보내도 됩니다. 사용자 ID를 함께 적어 주세요.</li>
+    </ul>
+  </section>
+</main>
+
+<footer><span>© 오르락</span><a href="./">홈</a><a href="./privacy.html">개인정보 처리방침</a><a href="./location-terms.html">위치기반서비스 이용약관</a></footer>
+<script>
+  const URL_BASE = 'https://kdymnbrxebukgerturql.supabase.co';
+  const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkeW1uYnJ4ZWJ1a2dlcnR1cnFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA4MTE3NjksImV4cCI6MjEwNjM4Nzc2OX0.VNXOaCia0Gas3dB5c6rvs9feJN-XY5l7wkjcAH4JKXs';
+  const uid = document.getElementById('uid');
+  const m = location.hash.match(/u=([0-9a-fA-F-]{36})/);
+  if (m) { uid.value = m[1]; history.replaceState(null, '', location.pathname); }
+  const result = document.getElementById('result');
+  document.getElementById('f').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const kind = document.querySelector('input[name=kind]:checked')?.value;
+    const id = uid.value.trim();
+    const contact = document.getElementById('contact').value.trim();
+    const note = document.getElementById('note').value.trim();
+    result.className = '';
+    if (id && !/^[0-9a-fA-F-]{36}$/.test(id)) { result.className = 'err'; result.textContent = '사용자 ID 형식이 맞지 않아요. 앱에서 이 페이지를 다시 열어 주세요'; return; }
+    if (!id && !contact) { result.className = 'err'; result.textContent = '사용자 ID나 연락처 중 하나는 꼭 필요해요'; return; }
+    const btn = document.getElementById('send');
+    btn.disabled = true;
+    try {
+      const res = await fetch(URL_BASE + '/rest/v1/rpc/submit_privacy_request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: KEY, Authorization: 'Bearer ' + KEY },
+        body: JSON.stringify({ uid: id || null, kind, contact: contact || null, note: note || null }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      const no = await res.json();
+      result.textContent = '요청을 받았어요(접수 번호 ' + no + '). 10일 안에 처리할게요';
+      document.getElementById('f').reset();
+    } catch (err) {
+      result.className = 'err';
+      result.textContent = '보내지 못했어요. 잠시 뒤 다시 시도하거나 이메일로 보내 주세요';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
