@@ -17,11 +17,17 @@
 <link rel="icon" href="./favicon.png">
 <script>
 (function () {
-  var ios = 'https://apps.apple.com/app/apple-store/id6823472513?pt=129627372&ct=ig_bio&mt=8';
-  var android = 'https://play.google.com/store/apps/details?id=com.oreurock.app&referrer=utm_source%3Dinstagram%26utm_campaign%3Dig_bio';
+  var c = (new URLSearchParams(location.search).get('c') || '').toLowerCase();
+  var campaign = /^[a-z0-9_]{1,20}$/.test(c) ? 'ig_' + c : 'ig_bio';
+  var ios = 'https://apps.apple.com/app/apple-store/id6823472513?pt=129627372&ct=' + campaign + '&mt=8';
+  var android = 'https://play.google.com/store/apps/details?id=com.oreurock.app&referrer=' + encodeURIComponent('utm_source=instagram&utm_campaign=' + campaign);
   var ua = navigator.userAgent || '';
   var to = /iPhone|iPad|iPod/.test(ua) ? ios : /Android/.test(ua) ? android : null;
-  if (to) location.replace(to);
+  if (to) { location.replace(to); return; }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a.store.ios').forEach(function (a) { a.href = ios; });
+    document.querySelectorAll('a.store.play').forEach(function (a) { a.href = android; });
+  });
 })();
 </script>
 <link rel="stylesheet" href="./landing.css">
